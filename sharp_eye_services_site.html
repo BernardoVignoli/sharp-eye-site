@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sharp Eye Services</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background-color: #111;
+      color: #f5f5f5;
+    }
+    header {
+      background-color: #1a1a1a;
+      padding: 2rem;
+      text-align: center;
+      border-bottom: 2px solid #444;
+    }
+    header img {
+      width: 320px;
+      margin-bottom: 1rem;
+    }
+    h1 {
+      font-size: 2.5rem;
+      margin: 0.5rem 0;
+    }
+    p.slogan {
+      font-style: italic;
+      color: #ccc;
+    }
+    .cta {
+      background-color: #f5f5f5;
+      color: #111;
+      padding: 1rem 2rem;
+      display: inline-block;
+      margin-top: 1rem;
+      font-weight: 600;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: all 0.2s ease-in-out;
+    }
+    .cta:hover {
+      background-color: #f8d05f;
+      color: #000;
+      transform: scale(1.03);
+    }
+    section {
+      padding: 3rem 2rem;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: #f8d05f;
+    }
+    .bio {
+      display: flex;
+      flex-direction: row;
+      gap: 2rem;
+      align-items: center;
+    }
+    .bio img {
+      width: 180px;
+      border-radius: 10px;
+    }
+    .scz-box {
+      background-color: #1f1f1f;
+      border-left: 4px solid #f8d05f;
+      padding: 1rem 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    input, textarea {
+      padding: 0.75rem;
+      border: none;
+      border-radius: 5px;
+      font-size: 1rem;
+    }
+    button {
+      background-color: #f8d05f;
+      color: #111;
+      padding: 0.75rem;
+      font-weight: 600;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: all 0.2s ease-in-out;
+    }
+    button:hover {
+      background-color: #fff07f;
+      transform: scale(1.03);
+    }
+    .sticker-row {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      margin-top: 2rem;
+    }
+    .sticker-row img {
+      width: 200px;
+      border-radius: 8px;
+    }
+    .testimonials {
+      margin-top: 4rem;
+      background-color: #1a1a1a;
+      padding: 2rem;
+      border-radius: 10px;
+      text-align: center;
+    }
+    .testimonial {
+      display: none;
+      align-items: center;
+      justify-content: center;
+      gap: 1.5rem;
+      flex-direction: row;
+    }
+    .testimonial.active {
+      display: flex;
+    }
+    .testimonial img {
+      width: 120px;
+      border-radius: 10px;
+    }
+    .testimonial p {
+      font-style: italic;
+      max-width: 500px;
+    }
+    .testimonial-nav {
+      margin-top: 1rem;
+    }
+    .testimonial-nav button {
+      background: none;
+      border: 1px solid #f8d05f;
+      color: #f8d05f;
+      padding: 0.5rem 1rem;
+      margin: 0 0.5rem;
+      cursor: pointer;
+      border-radius: 5px;
+      transition: all 0.2s;
+    }
+    .testimonial-nav button:hover {
+      background-color: #f8d05f;
+      color: #111;
+    }
+    footer {
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.9rem;
+      color: #777;
+    }
+  </style>
+  <script>
+    let currentTestimonial = 0;
+    function showTestimonial(index) {
+      const testimonials = document.querySelectorAll('.testimonial');
+      testimonials.forEach((el, i) => {
+        el.classList.remove('active');
+        if (i === index) {
+          el.classList.add('active');
+        }
+      });
+      currentTestimonial = index;
+    }
+    function nextTestimonial() {
+      const testimonials = document.querySelectorAll('.testimonial');
+      showTestimonial((currentTestimonial + 1) % testimonials.length);
+    }
+    function prevTestimonial() {
+      const testimonials = document.querySelectorAll('.testimonial');
+      showTestimonial((currentTestimonial - 1 + testimonials.length) % testimonials.length);
+    }
+    window.onload = () => {
+      showTestimonial(currentTestimonial);
+    };
+  </script>
+</head>
+<body>
+  <header>
+    <img src="cat-logo.png" alt="Sharp Eye Logo">
+    <h1>Sharp Eye Services</h1>
+    <p class="slogan">Surveillance. Closure. Zero Doubts.</p>
+    <a href="#contact" class="cta">Hire Us</a>
+  </header>
+
+  <section>
+    <h2>About the Detective</h2>
+    <div class="bio">
+      <img src="bo-lung-profile.png" alt="Detective Bo Lung">
+      <p>
+        Bo Lung, also known as "The Revolver," is a seasoned investigator with a quiet presence and a sharp eye for details that most overlook. With decades of field experience and a code of honor sharper than his aim, Bo is known for resolving the kinds of cases others abandon. He doesn’t talk much — but when he does, it’s either to solve a riddle or end one.
+      </p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Our Method: The SCZ Protocol</h2>
+    <div class="scz-box">
+      <h3>Surveillance</h3>
+      <p>We observe. We track. We vanish in and out without a trace. From digital trails to back-alley shadows — no angle is missed.</p>
+    </div>
+    <div class="scz-box">
+      <h3>Closure</h3>
+      <p>We don’t just find the facts — we deliver resolution. Emotional, legal, personal. End of the line.</p>
+    </div>
+    <div class="scz-box">
+      <h3>Zero Doubts</h3>
+      <p>Bo doesn’t do maybe. When a case closes here, it stays closed.</p>
+    </div>
+  </section>
+
+    <section class="testimonials">
+    <h2>Client Testimonials</h2>
+    <div class="testimonial active">
+      <img src="Clarice.png" alt="Clarice G.">
+      <p>“I thought my grandmother's heirloom jewels were gone for good. Bo found the thief in less than 48 hours. I still don’t know how. I don’t ask.”<br>— <em>Clarice G., District 4</em></p>
+    </div>
+    <div class="testimonial">
+      <img src="Marvin.png" alt="Marvin J.">
+      <p>“When Mr. Sprinkles, my beloved iguana, vanished, everyone laughed. But Sharp Eye took me seriously. Three days later, they brought him back with a heat lamp and a police report.”<br>— <em>Marvin J., Botanica Sector</em></p>
+    </div>
+    <div class="testimonial">
+      <img src="Selina.png" alt="Selina K.">
+      <p>“He said he was working late. Bo said otherwise. I got the truth, the footage, and the papers. Worth every penny, unlike my ex-husband.”<br>— <em>Selina K., District 6</em></p>
+    </div>
+    <div class="testimonial-nav">
+      <button onclick="prevTestimonial()">Previous</button>
+      <button onclick="nextTestimonial()">Next</button>
+    </div>
+  </section>
+
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <form>
+      <input type="text" placeholder="Your Name" required>
+      <input type="echonetID" placeholder="EchoNet ID" required>
+      <input type="email" placeholder="Your Email (optional)">
+      <textarea placeholder="Tell us about your case..." rows="5"></textarea>
+      <button type="submit">Send Request</button>
+    </form>
+
+    <div class="sticker-row">
+      <img src="sticker1.png" alt="Sticker: Trust the Cat">
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2050 Sharp Eye Services. Trust the Cat. We Get It Done.
+  </footer>
+</body>
+</html>
